@@ -11,9 +11,9 @@ export const ProgressScrollBar = () => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", () => onScroll());
-    return window.removeEventListener("scroll", () => onScroll());
-  }, [width]);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const styles = {
     height: "25px",
@@ -22,7 +22,6 @@ export const ProgressScrollBar = () => {
     padding: 0,
     position: "sticky",
     top: "15px",
-    zIndex: 100,
     width,
   };
   return <div style={styles}></div>;

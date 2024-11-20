@@ -2,7 +2,6 @@ import { useState } from "react";
 import { restaurants } from "../constants/mock";
 import { RestaurantItem } from "./RestaurantItem";
 import { RestaurantTab } from "./RestaurantTab";
-import { ProgressScrollBar } from "./ProgressScrollBar";
 
 export const Restaurants = () => {
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
@@ -12,8 +11,7 @@ export const Restaurants = () => {
     (restaurant) => restaurant.id === currentRestaurantId
   );
   return (
-    <div>
-      <ProgressScrollBar />
+    <>
       <ul
         style={{
           display: "flex",
@@ -37,6 +35,6 @@ export const Restaurants = () => {
       <RestaurantItem restaurant={checkedRestaurant} />
       <RestaurantItem restaurant={checkedRestaurant} />
       <RestaurantItem restaurant={checkedRestaurant} />
-    </div>
+    </>
   );
 }; 

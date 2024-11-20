@@ -1,12 +1,12 @@
 import { useReducer } from "react";
 
-const initialFormState = {
+const INITIAL_FORM_STATE = {
   name: "",
   review: "",
   rating: 1,
 };
 
-const actions = {
+const ACTIONS = {
   change_name: "CHANGE_NAME",
   change_review: "CHANGE_REVIEW",
   change_rating: "CHANGE_RATING",
@@ -15,33 +15,33 @@ const actions = {
 
 const reducer = (state, { type, payload }) => {
   switch (type) {
-    case actions.change_name:
+    case ACTIONS.change_name:
       return { ...state, name: payload };
-    case actions.change_review:
+    case ACTIONS.change_review:
       return { ...state, review: payload };
-    case actions.change_rating:
+    case ACTIONS.change_rating:
       return { ...state, rating: payload };
-    case actions.reset_form:
-      return { ...initialFormState };
+    case ACTIONS.reset_form:
+      return { ...INITIAL_FORM_STATE };
     default:
       return state;
   }
 };
 
 export const useForm = () => {
-  const [formState, dispatch] = useReducer(reducer, initialFormState);
+  const [formState, dispatch] = useReducer(reducer, INITIAL_FORM_STATE);
 
   const updateName = (payload) => {
-    dispatch({ type: actions.change_name, payload });
+    dispatch({ type: ACTIONS.change_name, payload });
   };
   const updateReview = (payload) => {
-    dispatch({ type: actions.change_review, payload });
+    dispatch({ type: ACTIONS.change_review, payload });
   };
   const updateRating = (payload) => {
-    dispatch({ type: actions.change_rating, payload });
+    dispatch({ type: ACTIONS.change_rating, payload });
   };
   const resetForm = () => {
-    dispatch({ type: actions.reset_form, payload: "" });
+    dispatch({ type: ACTIONS.reset_form, payload: "" });
   };
 
   return { formState, updateName, updateRating, updateReview, resetForm };

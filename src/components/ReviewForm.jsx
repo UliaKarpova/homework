@@ -5,22 +5,20 @@ export const ReviewForm = () => {
     useForm();
   const { name, rating, review } = formState;
 
-  const increase = (e) => {
-    e.preventDefault();
+  const increase = () => {
     if (rating < 5) {
       updateRating(rating + 1);
     }
   };
 
-  const decrease = (e) => {
-    e.preventDefault();
+  const decrease = () => {
     if (rating > 1) {
       updateRating(rating - 1);
     }
   };
 
   return (
-    <form>
+    <form onSubmit={(e) => e.preventDefault()}>
       <label style={{ display: "block" }}>
         Имя&emsp;
         <input
