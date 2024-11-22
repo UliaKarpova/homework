@@ -1,0 +1,26 @@
+
+.block {
+  background-image: url(../../images/dish_14322448.png);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 100px;
+  margin: 0px;
+  margin-bottom: 50px;
+}
+.rating {
+  background: none;
+
+}
+  .text {
+    background-color: rgb(37, 37, 35);
+    padding: 20px;
+    width: 70%;
+    border-radius: 5px;
+  }
+  .author {
+    text-align: right;
+    width: calc(70% + 30px);
+    display: block;
+    position: relative;
+  }

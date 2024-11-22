@@ -1,0 +1,28 @@
+.reviews {
+
+}
+.title {
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(206, 135, 5);
+  font-weight: 400;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 50px;
+}
+.reviewsList {
+  width: calc(100% - 60px);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 0;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.reviewItem {
+  width: calc(50% - 50px);
+}

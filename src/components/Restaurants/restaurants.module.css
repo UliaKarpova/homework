@@ -1,0 +1,7 @@
+.restaurants {
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  margin: 0;
+  padding: 0;
+}

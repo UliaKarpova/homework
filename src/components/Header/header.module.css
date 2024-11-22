@@ -1,0 +1,22 @@
+.header {
+  background-image: url(../../images/black-pasta-with-copy-space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 200px;
+  display: flex;
+  /* position: relative; */
+  position: sticky;
+  top: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+ background: none;
+ margin-left: 70px;
+ margin-top: 0;
+ margin-bottom: 0;
+ font-weight: 900;
+ font-size: 60px;
+}
