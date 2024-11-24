@@ -1,0 +1,17 @@
+.dishItem {
+  background-image: url(../../images/delicious-top-view-black-shrimp-pasta-with-soy-sauce.jpg);
+  background-size: contain;
+  background-position: right;
+  background-repeat: no-repeat;
+  height: 180px;
+}
+
+.dishTitle {
+  font-size: 35px;
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.price {
+  margin-bottom: 15px;
+}

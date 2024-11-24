@@ -1,0 +1,16 @@
+.counter {
+  display: flex;
+  flex-direction: row;
+  width: 80px;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: rgb(206, 135, 5);
+  border: none;
+  width: 30px;
+}
+
+.span {
+  margin: 0 12px;
+}
