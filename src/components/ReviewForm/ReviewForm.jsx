@@ -22,7 +22,7 @@ export const ReviewForm = () => {
   return (
     <div className={styles.block}>
       <h3 className={styles.title}>Добавить отзыв</h3>
-      <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
+      <form onSubmit={(e) => e.preventDefault()}>
         <label className={styles.label}>
           Имя&emsp;
           <input

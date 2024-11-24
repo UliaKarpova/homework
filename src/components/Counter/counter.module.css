@@ -1,7 +1,6 @@
 .counter {
   display: flex;
   flex-direction: row;
-  background: none;
   width: 80px;
   justify-content: space-between;
 }
@@ -11,7 +10,7 @@
   border: none;
   width: 30px;
 }
+
 .span {
   margin: 0 12px;
-  background: none;
 }

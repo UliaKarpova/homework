@@ -5,7 +5,7 @@ export const MenuItem = ({ menuItem }) => {
   return (
     <div className={styles.dishItem}>
       <h4 className={styles.dishTitle}>{menuItem.name}</h4>
-      <p className={styles.ingredients}>
+      <p>
         &#9658; {menuItem.ingredients.join(", ")}
       </p>
       <p className={styles.price}>

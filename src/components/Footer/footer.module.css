@@ -1,4 +1,6 @@
 .footer {
   color: rgb(206, 135, 5);
-  margin: 25px;
+  padding: 0 25px 25px 25px;
+  background: #000000;
+  width: 100%;
 }

@@ -16,7 +16,7 @@ export const Restaurants = () => {
       <ul className={styles.restaurants}>
         {restaurants.map((restaurant) => {
           return (
-            <li key={restaurant.id}>
+            <li key={restaurant.id} className={styles.restaurantsTabItem}>
               <RestaurantTab
                 title={restaurant.name}
                 isCurrentTab={currentRestaurantId === restaurant.id}

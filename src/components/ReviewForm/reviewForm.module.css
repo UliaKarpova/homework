@@ -1,37 +1,39 @@
 .block {
-  background-color: rgb(37, 37, 35);
+  background: rgb(37, 37, 35);
   margin: 25px;
   padding: 25px;
   width: 31%;
   border-radius: 5px;
 }
+
 .title {
-  background: none;
   color: rgb(206, 135, 5);
   margin: 0;
 }
-.form {
-  background: none;
-  width: 100%;
 
-}
 .label {
-  background: none;
   display: flex;
   flex-direction: row;
   margin: 15px 0;
   align-items: center;
 }
+
 .input {
+  background: #000000;
   border: 2px solid rgb(37, 37, 35);
   border-radius: 5px;
   height: 25px;
 }
+
 .button {
+  background: #000000;
+  color: aliceblue;
   height: 50px;
+  padding: 15px;
   border: 2px solid rgb(37, 37, 35);
   border-radius: 5px;
 }
+
 .button:hover {
   background-color: rgb(206, 135, 5);
 }

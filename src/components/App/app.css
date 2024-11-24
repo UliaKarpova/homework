@@ -1,8 +1,7 @@
 @import url(../../vendor/normalize.css);
 @import url(../../vendor/fonts/fonts.css);
-* {
-  background: #000000;
-  width: 100%;
+
+body {
   font-family: 'Inter', 'Arial', sans-serif;
   color: aliceblue;
 }
