@@ -1,0 +1,7 @@
+.progressScrollBar {
+  height: 25px;
+  background-color: rgb(206, 135, 5);
+  position: sticky;
+  top: 0;
+  margin-top: auto;
+}
