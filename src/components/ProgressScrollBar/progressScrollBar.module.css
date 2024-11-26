@@ -1,7 +1,13 @@
 .progressScrollBar {
   height: 25px;
-  background-color: rgb(206, 135, 5);
   position: sticky;
   top: 0;
   margin-top: auto;
+}
+
+.progressScrollBar.orange {
+  background-color: rgb(206, 135, 5);
+}
+.progressScrollBar.blueviolet {
+  background-color:  rgb(114, 68, 156);
 }

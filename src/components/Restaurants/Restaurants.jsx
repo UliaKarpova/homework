@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { restaurants } from "../../constants/mock";
 import { RestaurantItem } from "../RestaurantItem/RestaurantItem";
-import { RestaurantTab } from "../RestaurantTab/RestaurantTab";
+import { Button } from "../Button/Button";
 import styles from "./restaurants.module.css";
+import classNames from "classnames";
 
 export const Restaurants = () => {
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
@@ -12,15 +13,17 @@ export const Restaurants = () => {
     (restaurant) => restaurant.id === currentRestaurantId
   );
   return (
-    <>
+    <main>
       <ul className={styles.restaurants}>
         {restaurants.map((restaurant) => {
           return (
             <li key={restaurant.id} className={styles.restaurantsTabItem}>
-              <RestaurantTab
-                title={restaurant.name}
-                isCurrentTab={currentRestaurantId === restaurant.id}
+              <Button
+                text={restaurant.name}
                 onClick={() => setCurrentRestaurantId(restaurant.id)}
+                extraClass={classNames(styles.tab, {
+                  [styles.current]: currentRestaurantId === restaurant.id,
+                })}
               />
             </li>
           );
@@ -30,6 +33,6 @@ export const Restaurants = () => {
         restaurant={checkedRestaurant}
         key={currentRestaurantId}
       />
-    </>
+    </main>
   );
 };

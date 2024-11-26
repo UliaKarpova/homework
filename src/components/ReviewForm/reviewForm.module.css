@@ -7,8 +7,8 @@
 }
 
 .title {
-  color: rgb(206, 135, 5);
-  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .label {
@@ -23,6 +23,8 @@
   border: 2px solid rgb(37, 37, 35);
   border-radius: 5px;
   height: 25px;
+  color: aliceblue;
+  padding: 10px;
 }
 
 .button {
@@ -32,8 +34,4 @@
   padding: 15px;
   border: 2px solid rgb(37, 37, 35);
   border-radius: 5px;
-}
-
-.button:hover {
-  background-color: rgb(206, 135, 5);
 }

@@ -1,9 +1,11 @@
 import { MenuItem } from "../MenuItem/MenuItem";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
 import styles from "./menu.module.css";
+
 export const Menu = ({ menu }) => {
   return (
     <section className={styles.section}>
-      <h3 className={styles.menuTitle}>МЕНЮ</h3>
+      <SectionTitle title={"Меню"} />
       <ul className={styles.menuList}>
         {menu.map((menuItem, index) => {
           return (

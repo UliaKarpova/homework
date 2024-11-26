@@ -4,17 +4,6 @@
   padding-bottom: 50px;
 }
 
-.menuTitle {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  background-color: rgb(206, 135, 5);
-  font-weight: 400;
-  font-size: 25px;
-  text-align: center;
-  margin: 0 auto 50px;
-  border-top: 3px solid rgb(37, 37, 35);
-}
-
 .menuList {
   width: calc(100% - 60px);
   display: flex;

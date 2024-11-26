@@ -16,3 +16,11 @@
   font-weight: 900;
   font-size: 60px;
 }
+
+.buttons {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: flex;
+  flex-direction: column;
+}
