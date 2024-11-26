@@ -8,8 +8,7 @@ export const Button = ({ text, extraClass, onClick }) => {
   return (
     <button
       onClick={onClick}
-      className={classNames(styles.button, {
-        [extraClass]: true,
+      className={classNames(styles.button, extraClass, {
         [styles.orange]: theme === "orange",
         [styles.blueviolet]: theme === "blueviolet",
       })}
