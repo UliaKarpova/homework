@@ -1,0 +1,10 @@
+.loginLogoutButton {
+  width: 200px;
+  height: 50px;
+  margin-top: 5px;
+}
+
+.loginLogoutButton:hover {
+  background-color: rgb(37, 37, 35);
+  opacity: 1;
+}

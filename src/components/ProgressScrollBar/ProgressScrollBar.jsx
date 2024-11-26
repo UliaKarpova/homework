@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 import styles from "./progressScrollBar.module.css";
+import classNames from "classnames";
 
 export const ProgressScrollBar = () => {
   const [width, setWidth] = useState("0");
-
+  const { theme } = useContext(ThemeContext);
   useEffect(() => {
     const onScroll = () => {
       const scrollPx = document.documentElement.scrollTop;
@@ -18,6 +20,12 @@ export const ProgressScrollBar = () => {
   }, []);
 
   return (
-    <div className={styles.progressScrollBar} style={{ width: width }}></div>
+    <div
+      className={classNames(styles.progressScrollBar, {
+        [styles.orange]: theme === "orange",
+        [styles.blueviolet]: theme === "blueviolet",
+      })}
+      style={{ width: width }}
+    ></div>
   );
 };

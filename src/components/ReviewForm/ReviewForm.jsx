@@ -1,5 +1,7 @@
 import { Counter } from "../Counter/Counter";
 import { useForm } from "../useForm/useForm";
+import { Button } from "../Button/Button";
+import { ColoredText } from "../ColoredText/ColoredText";
 import styles from "./reviewForm.module.css";
 
 export const ReviewForm = () => {
@@ -21,7 +23,7 @@ export const ReviewForm = () => {
 
   return (
     <div className={styles.block}>
-      <h3 className={styles.title}>Добавить отзыв</h3>
+      <ColoredText text={"Добавить отзыв"} extraClass={styles.title} />
       <form onSubmit={(e) => e.preventDefault()}>
         <label className={styles.label}>
           Имя&emsp;
@@ -51,9 +53,11 @@ export const ReviewForm = () => {
             value={rating}
           />
         </label>
-        <button className={styles.button} type="reset" onClick={resetForm}>
-          Очистить форму
-        </button>
+        <Button
+          text={"Очистить форму"}
+          extraClass={styles.button}
+          onClick={resetForm}
+        />
       </form>
     </div>
   );
