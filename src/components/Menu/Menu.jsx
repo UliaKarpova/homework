@@ -5,10 +5,10 @@ export const Menu = ({ menu }) => {
     <section className={styles.section}>
       <h3 className={styles.menuTitle}>МЕНЮ</h3>
       <ul className={styles.menuList}>
-        {menu.map((menuItem, index) => {
+        {menu.map((dishId) => {
           return (
-            <li key={index} className={styles.menuItem}>
-              <MenuItem menuItem={menuItem} />
+            <li key={dishId} className={styles.menuItem}>
+              <MenuItem dishId={dishId} />
             </li>
           );
         })}

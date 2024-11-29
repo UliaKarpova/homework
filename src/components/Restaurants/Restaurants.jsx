@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { RestaurantItem } from "../RestaurantItem/RestaurantItem";
 import { RestaurantTab } from "../RestaurantTab/RestaurantTab";
-import styles from "./restaurants.module.css";
 import { useSelector } from "react-redux";
-import { selectRestaurantsIds } from "../../redux/restaurants-slice";
+import { selectRestaurantsIds } from "../../redux/slices/restaurants-slice";
+import styles from "./restaurants.module.css";
 
 export const Restaurants = () => {
   const restaurantsIds = useSelector(selectRestaurantsIds);

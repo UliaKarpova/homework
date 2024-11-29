@@ -1,11 +1,11 @@
-import styles from "./restaurantTab.module.css";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/restaurants-slice";
+import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
+import styles from "./restaurantTab.module.css";
 
-export const RestaurantTab = ({ isCurrentTab, restourantId, onClick }) => {
-  const { title } = useSelector((store) =>
-    selectRestaurantById(store, restourantId)
+export const RestaurantTab = ({ isCurrentTab, restaurantId, onClick }) => {
+  const { name } = useSelector((store) =>
+    selectRestaurantById(store, restaurantId)
   );
   return (
     <button
@@ -14,7 +14,7 @@ export const RestaurantTab = ({ isCurrentTab, restourantId, onClick }) => {
         [styles.current]: isCurrentTab,
       })}
     >
-      {title}
+      {name}
     </button>
   );
 };
