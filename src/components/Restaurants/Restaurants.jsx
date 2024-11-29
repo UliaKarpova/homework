@@ -1,33 +1,33 @@
 import { useState } from "react";
-import { restaurants } from "../../constants/mock";
 import { RestaurantItem } from "../RestaurantItem/RestaurantItem";
 import { RestaurantTab } from "../RestaurantTab/RestaurantTab";
 import styles from "./restaurants.module.css";
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../redux/restaurants-slice";
 
 export const Restaurants = () => {
+  const restaurantsIds = useSelector(selectRestaurantsIds);
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
-    restaurants[0].id
+    restaurantsIds[0]
   );
-  const checkedRestaurant = restaurants.find(
-    (restaurant) => restaurant.id === currentRestaurantId
-  );
+
   return (
     <>
       <ul className={styles.restaurants}>
-        {restaurants.map((restaurant) => {
+        {restaurantsIds.map((restaurantId) => {
           return (
-            <li key={restaurant.id} className={styles.restaurantsTabItem}>
+            <li key={restaurantId} className={styles.restaurantsTabItem}>
               <RestaurantTab
-                title={restaurant.name}
-                isCurrentTab={currentRestaurantId === restaurant.id}
-                onClick={() => setCurrentRestaurantId(restaurant.id)}
+                restaurantId={restaurantId}
+                isCurrentTab={currentRestaurantId === restaurantId}
+                onClick={() => setCurrentRestaurantId(restaurantId)}
               />
             </li>
           );
         })}
       </ul>
       <RestaurantItem
-        restaurant={checkedRestaurant}
+        restaurantId={currentRestaurantId}
         key={currentRestaurantId}
       />
     </>
