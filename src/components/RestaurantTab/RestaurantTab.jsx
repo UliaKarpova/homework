@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { Button } from "../Button/Button";
 import { useSelector } from "react-redux";
 import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
 import styles from "./restaurantTab.module.css";
@@ -8,13 +9,12 @@ export const RestaurantTab = ({ isCurrentTab, restaurantId, onClick }) => {
     selectRestaurantById(store, restaurantId)
   );
   return (
-    <button
+    <Button
+      text={name}
       onClick={onClick}
-      className={classNames(styles.tab, {
+      extraClass={classNames(styles.tab, {
         [styles.current]: isCurrentTab,
       })}
-    >
-      {name}
-    </button>
+    />
   );
 };

@@ -1,5 +1,4 @@
 .tab {
-  background-color: rgb(37, 37, 35);
   width: 100%;
   height: 70px;
   color: aliceblue;
@@ -13,5 +12,5 @@
 }
 
 .current {
-  background-color: rgb(206, 135, 5);
+  background-color: rgb(37, 37, 35) !important;
 }

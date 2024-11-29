@@ -1,0 +1,11 @@
+.coloredText {
+  margin: 0;
+}
+
+.coloredText.orange {
+  color: rgb(206, 135, 5);
+}
+
+.coloredText.blueviolet {
+  color:  rgb(175, 110, 235);
+}

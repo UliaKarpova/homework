@@ -1,9 +1,12 @@
 import { DishCounter } from "../DishCounter/DishCounter";
+import { AuthContext } from "../AuthContext/AuthContext";
+import { useContext } from "react";
 import { useSelector } from "react-redux";
 import { selectDishById } from "../../redux/slices/dish-slice";
 import styles from "./menuItem.module.css";
 
 export const MenuItem = ({ dishId }) => {
+  const { isAuth } = useContext(AuthContext);
   const { name, ingredients, price } = useSelector((state) => selectDishById(state, dishId))
   return (
     <div className={styles.dishItem}>
@@ -14,7 +17,7 @@ export const MenuItem = ({ dishId }) => {
       <p className={styles.price}>
         Price:<b> {price}</b> &#8381;
       </p>
-      <DishCounter />
+      {isAuth && <DishCounter />}
     </div>
   );
 };

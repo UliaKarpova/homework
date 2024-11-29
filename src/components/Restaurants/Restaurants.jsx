@@ -3,7 +3,9 @@ import { RestaurantItem } from "../RestaurantItem/RestaurantItem";
 import { RestaurantTab } from "../RestaurantTab/RestaurantTab";
 import { useSelector } from "react-redux";
 import { selectRestaurantsIds } from "../../redux/slices/restaurants-slice";
+
 import styles from "./restaurants.module.css";
+import classNames from "classnames";
 
 export const Restaurants = () => {
   const restaurantsIds = useSelector(selectRestaurantsIds);
@@ -12,7 +14,7 @@ export const Restaurants = () => {
   );
 
   return (
-    <>
+    <main>
       <ul className={styles.restaurants}>
         {restaurantsIds.map((restaurantId) => {
           return (
@@ -30,6 +32,6 @@ export const Restaurants = () => {
         restaurantId={currentRestaurantId}
         key={currentRestaurantId}
       />
-    </>
+    </main>
   );
 };
