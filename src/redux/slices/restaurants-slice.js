@@ -3,8 +3,6 @@ import { normalizedRestaurants } from "../../constants/normalized-mock";
 
 const initialState = {
   entities: normalizedRestaurants.reduce((acc, restaurant) => {
-    console.log(restaurant.id)
-    console.log(acc)
     acc[restaurant.id] = restaurant;
     return acc;
   }, {}),
