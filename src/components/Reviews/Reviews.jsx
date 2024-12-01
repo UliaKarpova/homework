@@ -10,10 +10,10 @@ export const Reviews = ({ reviews }) => {
     <section className={styles.reviews}>
       <SectionTitle title={"Отзывы"} />
       <ul className={styles.reviewsList}>
-        {reviews.map((reviewItem, index) => {
+        {reviews.map((reviewId) => {
           return (
-            <li key={index} className={styles.reviewItem}>
-              <ReviewItem reviewItem={reviewItem} />
+            <li key={reviewId} className={styles.reviewItem}>
+              <ReviewItem reviewId={reviewId} />
             </li>
           );
         })}

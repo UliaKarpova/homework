@@ -1,36 +1,35 @@
 import { useState } from "react";
-import { restaurants } from "../../constants/mock";
 import { RestaurantItem } from "../RestaurantItem/RestaurantItem";
-import { Button } from "../Button/Button";
+import { RestaurantTab } from "../RestaurantTab/RestaurantTab";
+import { useSelector } from "react-redux";
+import { selectRestaurantsIds } from "../../redux/slices/restaurants-slice";
+
 import styles from "./restaurants.module.css";
 import classNames from "classnames";
 
 export const Restaurants = () => {
+  const restaurantsIds = useSelector(selectRestaurantsIds);
   const [currentRestaurantId, setCurrentRestaurantId] = useState(
-    restaurants[0].id
+    restaurantsIds[0]
   );
-  const checkedRestaurant = restaurants.find(
-    (restaurant) => restaurant.id === currentRestaurantId
-  );
+
   return (
     <main>
       <ul className={styles.restaurants}>
-        {restaurants.map((restaurant) => {
+        {restaurantsIds.map((restaurantId) => {
           return (
-            <li key={restaurant.id} className={styles.restaurantsTabItem}>
-              <Button
-                text={restaurant.name}
-                onClick={() => setCurrentRestaurantId(restaurant.id)}
-                extraClass={classNames(styles.tab, {
-                  [styles.current]: currentRestaurantId === restaurant.id,
-                })}
+            <li key={restaurantId} className={styles.restaurantsTabItem}>
+              <RestaurantTab
+                restaurantId={restaurantId}
+                isCurrentTab={currentRestaurantId === restaurantId}
+                onClick={() => setCurrentRestaurantId(restaurantId)}
               />
             </li>
           );
         })}
       </ul>
       <RestaurantItem
-        restaurant={checkedRestaurant}
+        restaurantId={currentRestaurantId}
         key={currentRestaurantId}
       />
     </main>
