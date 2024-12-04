@@ -1,19 +1,17 @@
-.restaurants {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  margin: 0;
-  padding: 0;
-  height: calc(100vh - 268px);
+.homePage {
   background-image: url(../../images/black-pasta-with-copy-space.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: calc(100vh - 268px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
   position: relative;
-
 }
-.restaurants::before {
+
+.homePage::before {
   content: '';
   position: absolute;
   top: 0;
@@ -24,7 +22,7 @@
   background: linear-gradient(to top, transparent, aliceblue 100%);
 
 }
-.restaurants::after {
+.homePage::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -35,17 +33,23 @@
   background: linear-gradient(to bottom, transparent, aliceblue 100%);
 
 }
-.restaurantsTabItem {
-  width: 40%;
-  border-right: 3px solid rgb(37, 37, 35); 
-  height: 75px;
-  margin-bottom: 20px;
+.title {
+  color: aliceblue;
+  font-size: 50px;
+  margin: 0;
+  margin-left: 70px;
+  margin-top: auto;
+  }
+
+.link {
+ display: block;
+ margin-top: 50px;
+ margin-bottom: auto;
+ margin-left: 70px;
+
 }
 
-/* .tab {
-  width: 100%;
-  height: 70px;
-  font-size: 25px;
-  font-weight: 400;
-} */
-
+.linkText {
+  text-decoration: underline;
+  font-size: 20px;
+}
