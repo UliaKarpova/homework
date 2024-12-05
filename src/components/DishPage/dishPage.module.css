@@ -1,0 +1,59 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  min-height: calc(100vh - 268px);
+  background-color: black;
+  position: relative;
+  padding-left: 30px;
+}
+.dishItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+}
+.main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(to top, transparent, aliceblue 100%);
+
+}
+.main::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(to bottom, transparent, aliceblue 100%);
+}
+
+
+.dishTitle {
+  font-size: 35px;
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.price {
+  margin-bottom: 15px;
+}
+
+.img {
+  width: 500px;
+  height: 250px;
+  object-fit: cover;
+}

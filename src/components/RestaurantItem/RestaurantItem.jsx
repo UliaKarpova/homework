@@ -1,15 +1,20 @@
-import { Menu } from "../Menu/Menu";
-import { Reviews } from "../Reviews/Reviews";
 import { useSelector } from "react-redux";
+import { Outlet, useParams } from "react-router-dom";
 import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
-export const RestaurantItem = ({ restaurantId }) => {
-  const { menu, reviews } = useSelector((store) =>
-    selectRestaurantById(store, restaurantId)
+import { RestaurantItemTabContainer } from "./RestaurantItemTabContainer";
+import { ColoredText } from "../ColoredText/ColoredText";
+import styles from "./restaurantItem.module.css";
+
+export const RestaurantItem = () => {
+  const { restaurantId } = useParams();
+  const { name } = useSelector((state) =>
+    selectRestaurantById(state, restaurantId)
   );
   return (
-    <>
-      <Menu menu={menu} />
-      {!!reviews.length && <Reviews reviews={reviews} />}
-    </>
+    <main className={styles.main}>
+      <ColoredText text={name} extraClass={styles.title} />
+      <RestaurantItemTabContainer restaurantId={restaurantId} />
+      <Outlet />
+    </main>
   );
 };
