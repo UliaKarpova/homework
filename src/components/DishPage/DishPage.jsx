@@ -5,9 +5,9 @@ import { selectDishById } from "../../redux/slices/dish-slice";
 import { DishCounter } from "../DishCounter/DishCounter";
 import { AuthContext } from "../AuthContext/AuthContext";
 import image from "../../images/delicious-top-view-black-shrimp-pasta-with-soy-sauce.jpg";
-import styles from "./dish.module.css";
+import styles from "./dishPage.module.css";
 
-export const Dish = () => {
+export const DishPage = () => {
   const { dishId } = useParams();
   const { isAuth } = useContext(AuthContext);
   const { name, ingredients, price } = useSelector((state) =>

@@ -13,6 +13,8 @@ export const Reviews = () => {
   const { name, reviews } = useSelector((state) =>
     selectRestaurantById(state, restaurantId)
   );
+  console.log('review')
+
   const { isAuth } = useContext(AuthContext);
   return (
     <section className={styles.reviews}>

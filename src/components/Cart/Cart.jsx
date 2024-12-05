@@ -16,7 +16,7 @@ export const Cart = () => {
       <ColoredText text="Корзина" extraClass={styles.title} />
       <ul>
         {items.map(({ id }) => (
-          <li key={id}>{<CartItem id={id} />}</li>
+          <li key={id}><CartItem id={id} /></li>
         ))}
       </ul>
     </div>
