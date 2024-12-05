@@ -1,8 +1,8 @@
 import { RestaurantItem } from "../components/RestaurantItem/RestaurantItem";
 import { Restaurants } from "../components/Restaurants/Restaurants";
-import { Menu } from "../components/Menu/Menu";
+import { MenuContainer } from "../components/Menu/MenuContainer";
 import { HomePage } from "../components/HomePage/HomePage";
-import { Reviews } from "../components/Reviews/Reviews";
+import { ReviewsContainer } from "../components/Reviews/ReviewsContainer";
 import { DishPage } from "../components/DishPage/DishPage";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
@@ -17,24 +17,24 @@ export const router = createBrowserRouter([
     errorElement: <Navigate to="/" />,
   },
   {
-    // path: "/restaurants/:restaurantId",
-    element: <RestaurantItem />,
-    errorElement: <Navigate to="/restaurants" />,
+    path: "/restaurants/:restaurantId",
+    element: (
+      <>
+        <RestaurantItem />
+        <Navigate to="menu" replace={true} />
+      </>
+    ),
     children: [
       {
-        path: ":restaurantId/menu",
-        render: (props) => <Menu {...props} />,
-        element: <Menu />,
-        errorElement: <Navigate to="/restaurants" />,
+        path: "menu",
+        element: <MenuContainer />,
       },
       {
-        path: ":restaurantId/reviews",
-        element: <Reviews />,
-        errorElement: <Navigate to="/restaurants" />,
+        path: "reviews",
+        element: <ReviewsContainer />,
       },
-    ]
+    ],
   },
-
   {
     path: "/dish/:dishId",
     element: <DishPage />,

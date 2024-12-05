@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
-import { RestaurantTabContainer } from "./RestaurantTabContainer";
+import { RestaurantItemTabContainer } from "./RestaurantItemTabContainer";
 import { ColoredText } from "../ColoredText/ColoredText";
 import styles from "./restaurantItem.module.css";
 
@@ -13,7 +13,8 @@ export const RestaurantItem = () => {
   return (
     <main className={styles.main}>
       <ColoredText text={name} extraClass={styles.title} />
-      <RestaurantTabContainer restaurantId={restaurantId} />
+      <RestaurantItemTabContainer restaurantId={restaurantId} />
+      <Outlet />
     </main>
   );
 };

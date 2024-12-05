@@ -1,18 +1,11 @@
-import { useSelector } from "react-redux";
 import { useContext } from "react";
 import classNames from "classnames";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
-import { selectReviewById } from "../../redux/slices/review-slice";
-import { selectUserById } from "../../redux/slices/user-slice";
 import styles from "./reviewItem.module.css";
 
-export const ReviewItem = ({ reviewId }) => {
+export const ReviewItem = ({ name, rating, text }) => {
   const { theme } = useContext(ThemeContext);
 
-  const { rating, text, userId } = useSelector((state) =>
-    selectReviewById(state, reviewId)
-  );
-  const { name } = useSelector((state) => selectUserById(state, userId));
   return (
     <blockquote
       className={classNames(styles.block, {

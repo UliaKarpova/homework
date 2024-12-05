@@ -9,7 +9,7 @@ export const RestaurantTabContainer = ({ restaurantId }) => {
   );
 
   return (
-    <NavLink to={`/restaurants/${restaurantId}/menu`}>
+    <NavLink to={`/restaurants/${restaurantId}`}>
       <Tab text={name} />
     </NavLink>
   );

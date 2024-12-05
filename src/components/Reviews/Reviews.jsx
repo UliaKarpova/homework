@@ -1,20 +1,11 @@
-import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
 import { useContext } from "react";
-import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
-import { ReviewItem } from "../ReviewItem/ReviewItem";
+import { ReviewItemContainer } from "../ReviewItem/ReviewItemContainer";
 import { ReviewForm } from "../ReviewForm/ReviewForm";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
 import { AuthContext } from "../AuthContext/AuthContext";
 import styles from "./reviews.module.css";
 
-export const Reviews = () => {
-  const { restaurantId } = useParams();
-  const { name, reviews } = useSelector((state) =>
-    selectRestaurantById(state, restaurantId)
-  );
-  console.log('review')
-
+export const Reviews = ({ name, reviews }) => {
   const { isAuth } = useContext(AuthContext);
   return (
     <section className={styles.reviews}>
@@ -23,7 +14,7 @@ export const Reviews = () => {
         {reviews.map((reviewId) => {
           return (
             <li key={reviewId} className={styles.reviewItem}>
-              <ReviewItem reviewId={reviewId} />
+              <ReviewItemContainer reviewId={reviewId} />
             </li>
           );
         })}

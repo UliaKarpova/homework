@@ -1,21 +1,13 @@
-// import { useParams } from "react-router-dom";
-// import { useSelector } from "react-redux";
-// import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
-import { useOutletContext } from "react-router-dom";
-
-// import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
 import { MenuItemTabContainer } from "../MenuItem/MenuItemTabContainer";
 import styles from "./menu.module.css";
 
-export const Menu = () => {
-  const [data] = useOutletContext();
-
-  console.log('menu', data)
+export const Menu = ({ menu, name }) => {
   return (
     <section className={styles.section}>
-      {/* <SectionTitle title={`Меню ${name}`} /> */}
+      <SectionTitle title={`Меню ${name}`} />
       <ul className={styles.container}>
-        {data.map((dishId) => {
+        {menu.map((dishId) => {
           return (
             <li key={dishId} className={styles.menuItem}>
               <MenuItemTabContainer dishId={dishId} />

@@ -2,7 +2,6 @@
   background: #000000;
   width: 100%;
   height: fit-content;
-  min-height: calc(100vh - 268px);
 }
 
 .title {
