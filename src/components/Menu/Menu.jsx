@@ -8,6 +8,7 @@ export const Menu = ({ menu, name }) => {
       <SectionTitle title={`Меню ${name}`} />
       <ul className={styles.container}>
         {menu.map((dishId) => {
+          console.log(dishId)
           return (
             <li key={dishId} className={styles.menuItem}>
               <MenuItemTabContainer dishId={dishId} />
