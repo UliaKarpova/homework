@@ -1,9 +1,9 @@
-import { RestaurantItem } from "../components/RestaurantItem/RestaurantItem";
+import { RestaurantItemPage } from "../pages/RestaurantItemPage/RestaurantItemPage";
 import { Restaurants } from "../components/Restaurants/Restaurants";
-import { MenuContainer } from "../components/Menu/MenuContainer";
-import { HomePage } from "../components/HomePage/HomePage";
-import { ReviewsContainer } from "../components/Reviews/ReviewsContainer";
-import { DishPage } from "../components/DishPage/DishPage";
+import { MenuPage } from "../pages/MenuPage/MenuPage";
+import { HomePage } from "../pages/HomePage/HomePage";
+import { ReviewsPage } from "../pages/ReviewsPage/ReviewsPage";
+import { DishPage } from "../pages/DishPage/DishPage";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 
 export const router = createBrowserRouter([
@@ -18,20 +18,16 @@ export const router = createBrowserRouter([
   },
   {
     path: "/restaurants/:restaurantId",
-    element: (
-      <>
-        <RestaurantItem />
-        <Navigate to="menu" replace={true} />
-      </>
-    ),
+    element: <RestaurantItemPage />,
+    errorElement: <Navigate to="/restaurants" />,
     children: [
       {
         path: "menu",
-        element: <MenuContainer />,
+        element: <MenuPage />,
       },
       {
         path: "reviews",
-        element: <ReviewsContainer />,
+        element: <ReviewsPage />,
       },
     ],
   },

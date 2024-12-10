@@ -44,3 +44,41 @@
   height: 75px;
   margin-bottom: 20px;
 }
+
+.linkContainer {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.link {
+  width: 100%;
+  height: 70px;
+  color: aliceblue;
+  font-size: 25px;
+  font-weight: 400;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.link:hover {
+  opacity: 50%;
+}
+
+
+.link.orange {
+  background-color: rgb(206, 135, 5);
+}
+
+.link.blueviolet {
+  background-color: rgb(114, 68, 156);
+}
+
+.active {
+  background-color: rgb(37, 37, 35) !important;
+}

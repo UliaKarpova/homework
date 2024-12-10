@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 import styles from "./restaurantItem.module.css";
 
-export const RestaurantItemTabContainer = ({ restaurantId }) => {
+export const RestarauntItemTabContainer = ({ restaurantId }) => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={styles.linkContainer}>

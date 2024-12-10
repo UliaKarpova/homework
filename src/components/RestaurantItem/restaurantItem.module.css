@@ -66,6 +66,7 @@
   justify-content: center;
   text-decoration: none;
 }
+
 .link:hover {
   opacity: 50%;
 }
@@ -78,6 +79,7 @@
 .link.blueviolet {
   background-color: rgb(114, 68, 156);
 }
+
 .active {
   background-color: rgb(37, 37, 35) !important;
 }
