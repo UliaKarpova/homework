@@ -1,0 +1,55 @@
+.homePage {
+  background-image: url(../../images/black-pasta-with-copy-space.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: calc(100vh - 268px);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  position: relative;
+}
+
+.homePage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(to top, transparent, aliceblue 100%);
+
+}
+.homePage::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  z-index: 2;
+  background: linear-gradient(to bottom, transparent, aliceblue 100%);
+
+}
+.title {
+  color: aliceblue;
+  font-size: 50px;
+  margin: 0;
+  margin-left: 70px;
+  margin-top: auto;
+  }
+
+.link {
+ display: block;
+ margin-top: 50px;
+ margin-bottom: auto;
+ margin-left: 70px;
+
+}
+
+.linkText {
+  text-decoration: underline;
+  font-size: 20px;
+}

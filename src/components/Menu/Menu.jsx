@@ -1,16 +1,16 @@
-import { MenuItem } from "../MenuItem/MenuItem";
 import { SectionTitle } from "../SectionTitle/SectionTitle";
+import { MenuItemTabContainer } from "../MenuItem/MenuItemTabContainer";
 import styles from "./menu.module.css";
 
-export const Menu = ({ menu }) => {
+export const Menu = ({ menu, name }) => {
   return (
     <section className={styles.section}>
-      <SectionTitle title={"Меню"} />
-      <ul className={styles.menuList}>
+      <SectionTitle title={`Меню ${name}`} />
+      <ul className={styles.container}>
         {menu.map((dishId) => {
           return (
             <li key={dishId} className={styles.menuItem}>
-              <MenuItem dishId={dishId} />
+              <MenuItemTabContainer dishId={dishId} />
             </li>
           );
         })}

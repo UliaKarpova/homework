@@ -1,15 +1,14 @@
-import { Menu } from "../Menu/Menu";
-import { Reviews } from "../Reviews/Reviews";
-import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/slices/restaurants-slice";
-export const RestaurantItem = ({ restaurantId }) => {
-  const { menu, reviews } = useSelector((store) =>
-    selectRestaurantById(store, restaurantId)
-  );
-  return (
-    <>
-      <Menu menu={menu} />
-      {!!reviews.length && <Reviews reviews={reviews} />}
-    </>
-  );
+import { ColoredText } from "../ColoredText/ColoredText";
+import { RestarauntItemTabContainer } from "./RestaurantItemTabContainer";
+import styles from "./restaurantItem.module.css";
+
+export const RestaurantItem = ({ name, restaurantId, children }) => {
+
+    return (
+        <main className={styles.main}>
+            <ColoredText text={name} extraClass={styles.title} />
+            <RestarauntItemTabContainer restaurantId={restaurantId} />
+            {children}
+        </main>
+    );
 };
