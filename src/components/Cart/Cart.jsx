@@ -6,7 +6,6 @@ import styles from "./cart.module.css";
 
 export const Cart = () => {
   const items = useSelector(selectCartItems);
-
   if (!items.length) {
     return null;
   }
@@ -16,7 +15,7 @@ export const Cart = () => {
       <ColoredText text="Корзина" extraClass={styles.title} />
       <ul>
         {items.map(({ id }) => (
-          <li key={id}><CartItem id={id} /></li>
+          <li key={id}><CartItem dishId={id} /></li>
         ))}
       </ul>
     </div>

@@ -1,26 +1,24 @@
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectDishById } from "../../redux/entities/restaurants/dish-slice";
-import { getDish } from "../../redux/entities/restaurants/get-dish";
+import { selectDishById } from "../../redux/entities/restaurants/dish/dish-slice";
+import { getDish } from "../../redux/entities/restaurants/dish/get-dish";
 import { useRequest } from '../../redux/hooks/use-request'
 import { Tab } from "../Tab/Tab";
 
 export const MenuItemTabContainer = ({ dishId }) => {
-  const res = useSelector((state) => selectDishById(state, dishId));
-  console.log(res)
-  const requestStatus = useRequest(getDish);
+  const dish = useSelector((state) => selectDishById(state, dishId));
+  const requestStatus = useRequest(getDish, dishId);
 
   if (requestStatus === 'pending') {
     return 'Loading...'
   }
 
-  if (!res || requestStatus === 'rejected') {
+  if (!dish || requestStatus === 'rejected') {
     return null;
   }
-
   return (
     <Link to={`/dish/${dishId}`}>
-      <Tab text={res.name} />
+      <Tab text={dish.name} />
     </Link>
   );
 };

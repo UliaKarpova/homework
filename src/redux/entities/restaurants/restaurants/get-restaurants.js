@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { selectRestaurantsIds } from './restaurants-slice'
+
 export const getRestaurants = createAsyncThunk('restaurants/getRestaurants', 
     async(_, {rejectWithValue}) => {
     const response = await fetch('http://localhost:3001/api/restaurants');

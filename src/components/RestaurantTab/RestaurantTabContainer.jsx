@@ -1,16 +1,15 @@
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants-slice";
+import { selectRestaurantById } from "../../redux/entities/restaurants/restaurants/restaurants-slice";
 import { useRequest } from '../../redux/hooks/use-request'
-import { getRestaurantById } from "../../redux/entities/restaurants/get-restaurant-by-id";
+import { getRestaurantById } from "../../redux/entities/restaurants/restaurants/get-restaurant-by-id";
 import { Tab } from "../Tab/Tab";
 
 export const RestaurantTabContainer = ({ restaurantId }) => {
   const { name } = useSelector((store) =>
     selectRestaurantById(store, restaurantId)
   );
-
-  const requestStatus = useRequest(getRestaurantById)
+  const requestStatus = useRequest(getRestaurantById, restaurantId)
 
   if (requestStatus === 'pending') {
     return 'Loading...'
