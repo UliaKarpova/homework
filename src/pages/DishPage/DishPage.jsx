@@ -1,32 +1,24 @@
 import { useContext } from "react";
-import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../components/AuthContext/AuthContext";
 import { Dish } from '../../components/Dish/Dish'
 import { DishCounter } from "../../components/DishCounter/DishCounter";
-import { selectDishById } from "../../redux/entities/restaurants/dish/dish-slice";
-import { getDish } from "../../redux/entities/restaurants/dish/get-dish";
-import { useRequest } from '../../redux/hooks/use-request'
+import { useGetDishByIdQuery } from "../../redux/services/api";
 
 export const DishPage = () => {
   const { dishId } = useParams();
   const { isAuth } = useContext(AuthContext);
+  const { data, isLoading, isError } = useGetDishByIdQuery(dishId)
 
-  const dish = useSelector((state) =>
-    selectDishById(state, dishId)
-  );
-
-  const requestStatus = useRequest(getDish, dishId)
-
-  if (requestStatus === 'pending') {
+  if (isLoading) {
     return 'Loading...'
   }
 
-  if (!dish || !dish?.name || requestStatus === 'rejected') {
+  if (!data || !data?.name || isError) {
     return null
   }
   return (
-    <Dish name={dish.name} ingredients={dish.ingredients} price={dish.price}>
+    <Dish name={data.name} ingredients={data.ingredients} price={data.price}>
       {isAuth && <DishCounter id={dishId} />}
     </Dish>
   );

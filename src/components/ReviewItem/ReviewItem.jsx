@@ -16,7 +16,7 @@ export const ReviewItem = ({ userId, rating, text }) => {
     >
       <h4>Рейтинг {rating}</h4>
       <p className={styles.text}>{text}</p>
-      <UserContainer userId={userId} />
+      <UserContainer id={userId} />
     </blockquote>
   );
 };
