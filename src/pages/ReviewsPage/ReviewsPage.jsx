@@ -23,5 +23,6 @@ export const ReviewsPage = () => {
     userRequestStatus === 'rejected') {
     return null;
   }
+
   return <Reviews reviews={reviews} />;
 };

@@ -8,12 +8,13 @@ export const userSlice = createSlice({
   initialState: entityAdapter.getInitialState(),
   selectors: {
     selectUserById: (state, id) => state.entities[id],
-  },
+    selectUsers: (state) => state.ids
+   },
   extraReducers: (builder) => builder
-    .addCase(getUsers.fulfilled,  (state, { payload }) => {
-      entityAdapter.setMany(state, payload)
-    })
+  .addCase(getUsers.fulfilled,  (state, { payload }) => {
+    entityAdapter.addMany(state, payload)
+  })
 });
 
-export const { selectUserById } =
+export const { selectUserById, selectUsers } =
 userSlice.selectors;

@@ -1,0 +1,6 @@
+.author {
+    text-align: right;
+    width: calc(70% + 30px);
+    display: block;
+    font-style: italic;
+}

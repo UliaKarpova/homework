@@ -1,5 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
-import { selectRestaurantById } from '../restaurants/restaurants-slice'
+import { selectDishesByRestaurantId } from '../dish/dish-slice'
 
 export const getRestaurantMenu = createAsyncThunk('restaurants/getRestaurantMenu', 
     async(restautantId, { rejectWithValue}) => {
@@ -13,7 +13,7 @@ export const getRestaurantMenu = createAsyncThunk('restaurants/getRestaurantMenu
     return result
     }, {
         condition: (restautantId, { getState }) => {
-        return !!selectRestaurantById(getState(), restautantId).menu.length
+        return !!selectDishesByRestaurantId(getState(), restautantId).length
         }
     }
 );

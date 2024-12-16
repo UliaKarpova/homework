@@ -9,6 +9,15 @@ export const dishSlice = createSlice({
   initialState: entityAdapter.getInitialState(),
   selectors: {
     selectDishById: (state, dishId) => state.entities[dishId],
+    selectDishesByRestaurantId: (state, restaurantId) => {
+      const restaurantDishes =  []
+      state.ids.forEach(id => {
+        if (state.entities[id].restaurantId === restaurantId) {
+          restaurantDishes.push(id)
+        }
+      })
+      return restaurantDishes
+    }
   },
   extraReducers: (builder) => builder
     .addCase(getDish.fulfilled,  (state, { payload }) => {
@@ -19,5 +28,5 @@ export const dishSlice = createSlice({
     })
 });
 
-export const { selectDishById } =
+export const { selectDishById, selectDishesByRestaurantId } =
 dishSlice.selectors;
