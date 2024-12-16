@@ -9,22 +9,15 @@
 
 .block.orange {
   background-image: url(../../images/dish_14322448.png);
-} 
+}
 
 .block.blueviolet {
   background-image: url(../../images/rating_11768563.png);
-} 
+}
 
 .text {
   background-color: rgb(37, 37, 35);
   padding: 20px;
   width: 70%;
   border-radius: 5px;
-}
-
-.author {
-  text-align: right;
-  width: calc(70% + 30px);
-  display: block;
-  font-style: italic;
 }

@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import classNames from "classnames";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
+import { UserContainer } from "../User/UserContainer";
 import styles from "./reviewItem.module.css";
 
-export const ReviewItem = ({ name, rating, text }) => {
+export const ReviewItem = ({ userId, rating, text }) => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -15,7 +16,7 @@ export const ReviewItem = ({ name, rating, text }) => {
     >
       <h4>Рейтинг {rating}</h4>
       <p className={styles.text}>{text}</p>
-      <span className={styles.author}>{name}</span>
+      <UserContainer userId={userId} />
     </blockquote>
   );
 };
