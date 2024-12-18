@@ -1,8 +1,9 @@
+"use client"
 import { RestaurantTabContainer } from "../RestaurantTab/RestaurantTabContainer";
 import { useGetRestaurantsQuery } from "../../redux/services/api";
 import styles from "./restaurants.module.css";
 
-export const Restaurants = () => {
+export default function Restaurants() {
   const { data, isError, isLoading } = useGetRestaurantsQuery();
   if (isLoading) {
     return 'Loading...'

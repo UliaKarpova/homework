@@ -1,6 +1,5 @@
 import styles from "./dish.module.css";
 import image from "../../images/delicious-top-view-black-shrimp-pasta-with-soy-sauce.jpg";
-
 export const Dish = ({ name, ingredients, price, children }) => {
     return (
         <main className={styles.main}>
@@ -12,7 +11,7 @@ export const Dish = ({ name, ingredients, price, children }) => {
                 </p>
                 {children}
             </div>
-            <img className={styles.img} src={image} alt="Блюдо" />
+            <img className={styles.img} src={image.src} alt="Блюдо" />
         </main>
     )
 }

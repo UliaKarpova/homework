@@ -1,7 +1,7 @@
 import { Counter } from "../Counter/Counter";
 import { useForm } from "../useForm/useForm";
 import { Button } from "../Button/Button";
-import { ColoredText } from "../ColoredText/ColoredText";
+import ColoredText from "../ColoredText/ColoredText";
 import { useContext } from "react";
 import { AuthContext } from "../AuthContext/AuthContext";
 import styles from "./reviewForm.module.css";

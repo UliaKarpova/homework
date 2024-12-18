@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import classNames from "classnames";
 import { useContext } from "react";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
@@ -8,30 +8,26 @@ export const RestarauntItemTabContainer = ({ restaurantId }) => {
   const { theme } = useContext(ThemeContext);
   return (
     <div className={styles.linkContainer}>
-      <NavLink
-        to={`/restaurants/${restaurantId}/menu`}
-        className={({ isActive }) =>
-          classNames(styles.link, {
-            [styles.orange]: theme === "orange",
-            [styles.blueviolet]: theme === "blueviolet",
-            [styles.active]: isActive,
-          })
+      <Link
+        href={`/restaurants/${restaurantId}/menu`}
+        className={classNames(styles.link, {
+          [styles.orange]: theme === "orange",
+          [styles.blueviolet]: theme === "blueviolet",
+        })
         }
       >
         МЕНЮ
-      </NavLink>
-      <NavLink
-        to={`/restaurants/${restaurantId}/reviews`}
-        className={({ isActive }) =>
-          classNames(styles.link, {
-            [styles.orange]: theme === "orange",
-            [styles.blueviolet]: theme === "blueviolet",
-            [styles.active]: isActive,
-          })
+      </Link>
+      <Link
+        href={`/restaurants/${restaurantId}/reviews`}
+        className={classNames(styles.link, {
+          [styles.orange]: theme === "orange",
+          [styles.blueviolet]: theme === "blueviolet",
+        })
         }
       >
         ОТЗЫВЫ
-      </NavLink>
+      </Link>
     </div>
   );
 };

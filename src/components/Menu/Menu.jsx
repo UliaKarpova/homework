@@ -1,15 +1,15 @@
 import { Tab } from "../Tab/Tab";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styles from "./menu.module.css";
 
-export const Menu = ({ menu }) => {
+export default function Menu({ menu }) {
   return (
     <section className={styles.section}>
       <ul className={styles.container}>
         {menu.map(({ id, name }) => {
           return (
             <li key={id} className={styles.menuItem}>
-              <Link to={`/dish/${id}`}>
+              <Link href={`/dish/${id}`}>
                 <Tab text={name} />
               </Link>
             </li>)
