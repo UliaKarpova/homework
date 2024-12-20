@@ -1,8 +1,9 @@
-import { Outlet, useParams } from "react-router-dom";
-import { RestaurantItem } from "../../components/RestaurantItem/RestaurantItem";
-import { useGetRestaurantsQuery } from "../../redux/services/api";
+"use client"
+import { useParams } from "next/navigation";
+import { RestaurantItem } from "../../../../components/RestaurantItem/RestaurantItem";
+import { useGetRestaurantsQuery } from "../../../../redux/services/api";
 
-export const RestaurantItemPage = () => {
+export default function RestaurantItemPage({children}) {
   const { restaurantId } = useParams();
 
   const { data: restaurant } = useGetRestaurantsQuery(undefined, {
@@ -12,9 +13,13 @@ export const RestaurantItemPage = () => {
     })
   })
 
+  if (!restaurant?.name) {
+      return null
+  }
+
   return (
     <RestaurantItem name={restaurant.name} restaurantId={restaurantId} >
-      <Outlet />
+        {children}
     </RestaurantItem>
   );
 };

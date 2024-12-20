@@ -1,13 +1,15 @@
+"use client"
 import { useCallback } from "react";
-import { useParams } from "react-router-dom";
-import { Reviews } from "../../components/Reviews/Reviews";
+import { useParams } from 'next/navigation'
+import { Reviews } from "../../../../../components/Reviews/Reviews";
 import {
   useGetRewiewsByRestaurantIdQuery,
   useGetUsersQuery,
   useAddReviewMutation
-} from "../../redux/services/api";
+} from "../../../../../redux/services/api";
 
-export const ReviewsPage = () => {
+export default function ReviewPage() {
+
   const { restaurantId } = useParams();
   const { data, isFetching: isGetRewiewsFetching, isError } = useGetRewiewsByRestaurantIdQuery(restaurantId)
   const { data: users, isLoading: isUserLoading, isError: isUserError } = useGetUsersQuery()

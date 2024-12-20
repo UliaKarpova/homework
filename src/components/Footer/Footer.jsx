@@ -1,4 +1,4 @@
-import { ColoredText } from "../ColoredText/ColoredText";
+import ColoredText from "../ColoredText/ColoredText";
 import styles from "./footer.module.css";
 
 export const Footer = () => {

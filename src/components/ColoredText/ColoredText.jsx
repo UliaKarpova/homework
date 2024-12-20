@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./coloredText.module.css";
 import { useContext } from "react";
 
-export const ColoredText = ({ text, extraClass }) => {
+export default function ColoredText({ text, extraClass }) {
   const { theme } = useContext(ThemeContext);
   return (
     <p

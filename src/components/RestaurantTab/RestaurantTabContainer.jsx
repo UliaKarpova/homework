@@ -1,11 +1,11 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 import { Tab } from "../Tab/Tab";
 
 export const RestaurantTabContainer = ({ name, id }) => {
 
   return (
-    <NavLink to={`/restaurants/${id}/menu`}>
+    <Link href={`/restaurants/${id}/menu`}>
       <Tab text={name} />
-    </NavLink>
+    </Link>
   );
 };

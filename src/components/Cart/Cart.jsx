@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectCartItems } from "../../redux/ui/cart/cart-slice";
 import { CartItem } from "../CartItem/CartItem";
-import { ColoredText } from "../ColoredText/ColoredText";
+import ColoredText from "../ColoredText/ColoredText";
 import styles from "./cart.module.css";
 
 export const Cart = () => {
