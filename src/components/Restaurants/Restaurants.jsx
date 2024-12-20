@@ -17,7 +17,6 @@ export default function Restaurants() {
         return (
           <li key={id} className={styles.restaurantsTabItem}>
             <RestaurantTabContainer
-              key={id}
               name={name}
               id={id}
             />

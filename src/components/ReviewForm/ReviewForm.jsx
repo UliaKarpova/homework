@@ -7,7 +7,7 @@ import { AuthContext } from "../AuthContext/AuthContext";
 import styles from "./reviewForm.module.css";
 
 export const ReviewForm = ({ onSubmit }) => {
-  const { id } = useContext(AuthContext)
+  const { user } = useContext(AuthContext)
   const { formState, updateRating, updateText, resetForm } =
     useForm();
 
@@ -55,7 +55,7 @@ export const ReviewForm = ({ onSubmit }) => {
         <Button
           text={"Добавить отзыв"}
           extraClass={styles.button}
-          onClick={() => onSubmit({ text, rating, userId: id })}
+          onClick={() => onSubmit({ text, rating, userId: user.id })}
         />
       </form>
     </div>
