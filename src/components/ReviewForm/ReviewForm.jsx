@@ -2,12 +2,16 @@ import { Counter } from "../Counter/Counter";
 import { useForm } from "../useForm/useForm";
 import { Button } from "../Button/Button";
 import { ColoredText } from "../ColoredText/ColoredText";
+import { useContext } from "react";
+import { AuthContext } from "../AuthContext/AuthContext";
 import styles from "./reviewForm.module.css";
 
-export const ReviewForm = () => {
-  const { formState, updateName, updateRating, updateReview, resetForm } =
+export const ReviewForm = ({ onSubmit }) => {
+  const { id } = useContext(AuthContext)
+  const { formState, updateRating, updateText, resetForm } =
     useForm();
-  const { name, rating, review } = formState;
+
+  const { rating, text } = formState;
 
   const increase = () => {
     if (rating < 5) {
@@ -26,23 +30,13 @@ export const ReviewForm = () => {
       <ColoredText text={"Добавить отзыв"} extraClass={styles.title} />
       <form onSubmit={(e) => e.preventDefault()}>
         <label className={styles.label}>
-          Имя&emsp;
-          <input
-            className={styles.input}
-            type="text"
-            name="name"
-            value={name}
-            onChange={(e) => updateName(e.target.value)}
-          />
-        </label>
-        <label className={styles.label}>
           Текст&emsp;
           <input
             className={styles.input}
             type="textarea"
             name="text"
-            value={review}
-            onChange={(e) => updateReview(e.target.value)}
+            value={text}
+            onChange={(e) => updateText(e.target.value)}
           />
         </label>
         <label className={styles.label}>
@@ -57,6 +51,11 @@ export const ReviewForm = () => {
           text={"Очистить форму"}
           extraClass={styles.button}
           onClick={resetForm}
+        />
+        <Button
+          text={"Добавить отзыв"}
+          extraClass={styles.button}
+          onClick={() => onSubmit({ text, rating, userId: id })}
         />
       </form>
     </div>
